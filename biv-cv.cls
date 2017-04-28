@@ -46,6 +46,8 @@
 %-------------------------------------------------------------------------------
 %                3rd party packages
 %-------------------------------------------------------------------------------
+% Needed for pictures
+\RequirePackage{graphicx}
 % Needed to make fixed length table
 \RequirePackage{array}
 % Needed to handle list environment
