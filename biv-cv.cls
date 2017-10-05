@@ -341,6 +341,12 @@
 %       would be \stackoverflow{123456}{sam-smith}
 \newcommand*{\stackoverflow}[2]{\def\@stackoverflowid{#1}\def\@stackoverflowname{#2}}
 
+% Defines writer's cryptostackexchange profile (optional)
+% Usage: \cryptostackexchange{<so userid>}{<so username>}
+%   e.g.https://cryptostackexchange.com/users/123456/sam-smith
+%       would be \cryptostackexchange{123456}{sam-smith}
+\newcommand*{\cryptostackexchange}[2]{\def\@cryptostackexchangeid{#1}\def\@cryptostackexchangename{#2}}
+
 % Defines writer's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
@@ -497,13 +503,6 @@
           \href{http://\@homepage}{\skillsetstyle{\faHome\acvHeaderIconSep\@homepage}}%
           ~\\
         }%
-      \ifthenelse{\isundefined{\@github}}%
-        {}%
-        {%
-          % \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\skillsetstyle{\faGithubSquare\acvHeaderIconSep\@github}}%
-          ~\\
-        }%
       \ifthenelse{\isundefined{\@stackoverflowid}}%
         {}%
         {%
@@ -525,6 +524,20 @@
           \href{https://twitter.com/\@twitter}{\skillsetstyle{\faTwitter\acvHeaderIconSep\@twitter}}%
           ~\\
         }%
+      \ifthenelse{\isundefined{\@github}}%
+        {}%
+        {%
+          % \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://github.com/\@github}{\skillsetstyle{\faGithubSquare\acvHeaderIconSep\@github}}%
+          ~\\
+        }%
+      % \ifthenelse{\isundefined{\@cryptostackexchangeid}}%
+      %   {}%
+      %   {%
+      %     % \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+      %     \href{https://crypto.stackexchange.com/users/\@cryptostackexchangeid}{\skillsetstyle{\faStackOverflow\acvHeaderIconSep\@cryptostackexchangename}}%
+      %     ~\\
+      %   }%
       \ifthenelse{\isundefined{\@skype}}%
         {}%
         {%
