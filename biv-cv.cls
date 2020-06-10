@@ -514,7 +514,7 @@
       {}%
       {\skillsetstyle{\@age}%
       \ifthenelse{\isundefined{\@status}}%
-        {}%
+        {\\}%
         {, \skillsetstyle{\@status}\\}%
       }%
     \ifthenelse{\isundefined{\@driving}}%
@@ -667,9 +667,9 @@ l}
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventrysix}[6]{%
-  \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
+  \renewcommand{\arraystretch}{0.9}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#1#3}
       {%
@@ -682,6 +682,7 @@ l}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\
     \multicolumn{2}{L{\textwidth}}{\skillstyle{#6}}
   \end{tabular*}%
+  \vspace{1.5mm}
 }
 
 % Define an entry of cv information
