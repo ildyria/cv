@@ -11,22 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        uses: actions/checkout@v2.3.1
         with:
           persist-credentials: false
 
-      - name: Compile LaTeX document 🔧
+      - name: Compile LaTeX document 🔧 # Build cv.pdf
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv.tex
           latexmk_use_xelatex: true
           
-      - name: Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Build 🔧  # Prepare build directory with its contents
         run: |
           make build
           make deploy
 
-      - name: Deploy 🚀
+      - name: Deploy 🚀 # Deploy to pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
