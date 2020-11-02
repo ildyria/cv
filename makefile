@@ -1,7 +1,16 @@
 XELATEX = xelatex
 
-all: 
+.PHONY: clean cv.pdf
+
+cv.pdf: 
 	${XELATEX} cv.tex
+
+build:
+	mkdir build
+
+deploy: build
+	mv cv.pdf build/cv.pdf
+	cp index.html build/index.html
 
 clean:
 	@echo cleaning...
@@ -18,3 +27,4 @@ clean:
 	@rm *.lol 2> /dev/null || true
 	@rm *.fls 2> /dev/null || true
 	@rm *.fdb_latexmk 2> /dev/null || true
+	@rm -fr build  2> /dev/null || true
