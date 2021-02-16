@@ -5,6 +5,13 @@ XELATEX = xelatex
 cv.pdf: 
 	${XELATEX} cv.tex
 
+letter.pdf: letter.tex awesome-cv.cls
+	${XELATEX} letter.tex
+
+
+letter2.pdf: letter2.tex awesome-cv.cls
+	${XELATEX} letter2.tex
+
 build:
 	mkdir build
 
