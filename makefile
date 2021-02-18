@@ -22,7 +22,7 @@ TARGET_PDF := $(TARGET_TEX:.tex=.pdf)
 
 all: $(TARGET_PDF)
 
-deploy: all build
+deploy: build
 	@echo -n $(DARKGRAY)
 	mv cv.pdf build/cv.pdf
 	cp index.html build/index.html
