@@ -21,10 +21,8 @@ jobs:
           root_file: cv.tex
           latexmk_use_xelatex: true
           
-      - name: Build 🔧  # Prepare build directory with its contents
-        run: |
-          make build
-          make deploy
+      - name: Build directory 🔧  # Prepare build directory with its contents
+        run: make deploy
 
       - name: Deploy 🚀 # Deploy to pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
