@@ -22,8 +22,9 @@ TARGET_PDF := $(TARGET_TEX:.tex=.pdf)
 
 all: $(TARGET_PDF)
 
-deploy: build
+deploy:
 	@echo -n $(DARKGRAY)
+	mkdir build
 	mv cv.pdf build/cv.pdf
 	cp index.html build/index.html
 	@echo -n $(NO_COLOR)
@@ -38,11 +39,6 @@ deploy: build
 $(BUILD_DIR):
 	@echo -n $(YELLOW)
 	mkdir $(BUILD_DIR)
-	@echo -n $(NO_COLOR)
-
-build:
-	@echo -n $(YELLOW)
-	mkdir build
 	@echo -n $(NO_COLOR)
 
 clean:
