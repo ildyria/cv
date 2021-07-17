@@ -40,3 +40,5 @@
 *.pdf
 tmp
 build
+
+letter*
