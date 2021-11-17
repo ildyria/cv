@@ -670,6 +670,7 @@ l}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \renewcommand{\arraystretch}{0.9}
+  \setlength{\extrarowheight}{+2pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#1#3}
       {%
@@ -706,6 +707,7 @@ l}
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
+  \setlength{\extrarowheight}{+2pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#1#3}
       {\entrytitlestyle{#2} & \entrydatestyle{#4} \\}
