@@ -658,7 +658,7 @@ l}
 
 % Define an environment for cventry
 \newenvironment{cventries}{%
-  \vspace{\acvSectionContentTopSkip}
+  % \vspace{\acvSectionContentTopSkip}
   \begin{center}
 }{%
   \end{center}
@@ -668,7 +668,7 @@ l}
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventrysix}[6]{%
   \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
+  % \setlength{\extrarowheight}{0pt}
   \renewcommand{\arraystretch}{0.9}
   \setlength{\extrarowheight}{+2pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -680,7 +680,7 @@ l}
       \entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\
       }%
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\~\\
     \multicolumn{2}{L{\textwidth}}{\skillstyle{#6}}
   \end{tabular*}%
   \vspace{1.5mm}
@@ -689,7 +689,7 @@ l}
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventryskill}[5]{%
-  \vspace{-2.0mm}
+  % \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -704,10 +704,11 @@ l}
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+  \vspace{2.0mm}
   \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \setlength{\extrarowheight}{+2pt}
+  % \setlength{\extrarowheight}{0pt}
+  \setlength{\extrarowheight}{-2pt}
+  % \setlength{\extrarowheight}{+2pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#1#3}
       {\entrytitlestyle{#2} & \entrydatestyle{#4} \\}
@@ -720,9 +721,9 @@ l}
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventryfour}[4]{%
-  \vspace{-2.0mm}
+  % \vspace{-1.0mm}
   \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
+  \setlength{\extrarowheight}{-2pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#2#3}
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
